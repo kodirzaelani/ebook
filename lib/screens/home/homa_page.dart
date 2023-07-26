@@ -32,12 +32,14 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Shara',
+                  'Hello Shara,',
                   style: semiBoldText16,
                 ),
                 Text(
                   'Good Morning',
-                  style: regularText14,
+                  style: regularText14.copyWith(
+                    color: greyColor,
+                  ),
                 ),
               ],
             ),
@@ -47,6 +49,44 @@ class HomePage extends StatelessWidget {
               width: 18,
             ),
           ],
+        ),
+      );
+    }
+
+    Widget searchField() {
+      return Container(
+        margin: const EdgeInsets.symmetric(horizontal: 30),
+        child: TextField(
+          decoration: InputDecoration(
+            hintText: 'Find Your Favorite Book',
+            hintStyle: mediumText12.copyWith(color: greyColor),
+            fillColor: greyColorSearchField,
+            filled: true,
+            border: const OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.all(
+                Radius.circular(12),
+              ),
+            ),
+            isCollapsed: true,
+            contentPadding: const EdgeInsets.all(18),
+            suffixIcon: InkWell(
+              onTap: () {},
+              child: Container(
+                padding: const EdgeInsets.all(15),
+                decoration: BoxDecoration(
+                  color: greenColor,
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(12),
+                  ),
+                ),
+                child: Icon(
+                  Icons.search_rounded,
+                  color: whiteColor,
+                ),
+              ),
+            ),
+          ),
         ),
       );
     }
@@ -68,6 +108,10 @@ class HomePage extends StatelessWidget {
             child: Column(
               children: [
                 header(),
+                const SizedBox(
+                  height: 30,
+                ),
+                searchField(),
               ],
             ),
           ),
