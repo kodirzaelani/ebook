@@ -12,6 +12,7 @@ Color greyColorRecentBook = const Color(0xFFAFAFAF);
 Color borderColorRecentBook = const Color(0xFFF3F3F3);
 Color greyColorInfo = const Color(0xFFF7F7F7);
 Color dividerColor = const Color(0xFF6B6B6B);
+Color transParentColor = Colors.transparent;
 
 // SEMIBOLD TEXT
 TextStyle semiBoldText20 =
