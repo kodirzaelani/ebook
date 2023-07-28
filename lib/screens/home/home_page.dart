@@ -1,5 +1,6 @@
 import 'package:ebook/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -91,14 +92,62 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget recentBook() {
+      return SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 30),
+        child: Row(
+          children: [
+            Container(
+              height: 150,
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                border: Border.all(color: borderColorRecentBook),
+              ),
+              child: Row(
+                children: [
+                  Image.asset(
+                    'assets/images/recentbook_1.png',
+                    width: 90,
+                  ),
+                  const SizedBox(width: 18),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Teh Magic',
+                        style: semiBoldText14.copyWith(color: blackColor2),
+                      ),
+                      CircularPercentIndicator(
+                        radius: 30,
+                        lineWidth: 7,
+                        animation: true,
+                        percent: 0.5,
+                        circularStrokeCap: CircularStrokeCap.round,
+                        progressColor: greenColor,
+                        reverse: true,
+                      ),
+                      Text(
+                        '50% Completed',
+                        style:
+                            mediumText12.copyWith(color: greyColorRecentBook),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: backgroundColor,
       body: ListView(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(
-              vertical: 30,
-            ),
+            padding: const EdgeInsets.symmetric(vertical: 30),
             decoration: BoxDecoration(
               color: whiteColor,
               borderRadius: const BorderRadius.only(
@@ -106,12 +155,23 @@ class HomePage extends StatelessWidget {
               ),
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 header(),
-                const SizedBox(
-                  height: 30,
-                ),
+                const SizedBox(height: 30),
                 searchField(),
+                const SizedBox(height: 30),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Text(
+                    'Recent Book',
+                    style: semiBoldText16.copyWith(
+                      color: blackColor,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 12),
+                 recentBook(),
               ],
             ),
           ),

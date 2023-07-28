@@ -1,6 +1,6 @@
 import 'package:ebook/screens/bookmarks/bookmark_page.dart';
 import 'package:ebook/screens/cart/cart_page.dart';
-import 'package:ebook/screens/home/homa_page.dart';
+import 'package:ebook/screens/home/home_page.dart';
 import 'package:ebook/screens/user/user_page.dart';
 import 'package:ebook/themes.dart';
 import 'package:flutter/material.dart';
