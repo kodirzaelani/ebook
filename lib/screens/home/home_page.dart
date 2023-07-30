@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'components/trending_book.dart';
 
 class HomePage extends StatefulWidget {
+  static const nameRoute = '/homePage';
   const HomePage({super.key});
 
   @override

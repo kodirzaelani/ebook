@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:ebook/screens/home/pages/book_detail.dart';
 import 'package:flutter/material.dart';
 
 import 'package:ebook/models/book.dart';
@@ -17,18 +18,23 @@ class TrendingBook extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          height: 160,
-          width: 110,
-          margin: const EdgeInsets.only(
-            top: 12,
-            right: 20,
-          ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            image: DecorationImage(
-              image: AssetImage(
-                info.imageUrl,
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, BookDetail.nameRoute);
+          },
+          child: Container(
+            height: 160,
+            width: 110,
+            margin: const EdgeInsets.only(
+              top: 12,
+              right: 20,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              image: DecorationImage(
+                image: AssetImage(
+                  info.imageUrl,
+                ),
               ),
             ),
           ),
