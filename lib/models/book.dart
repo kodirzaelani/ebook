@@ -20,7 +20,7 @@ List<Booklist> bookLists = [
       writers: 'Aaron Mahnke',
       title: 'Lore'),
   Booklist(
-      imageUrl: 'assets/images/trendingbook_1.png',
+      imageUrl: 'assets/images/trendingbook_3.png',
       writers: 'Spencer Johnson M.D',
       title: 'Who Move By Cheese'),
 ];
